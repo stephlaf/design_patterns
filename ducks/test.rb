@@ -1,7 +1,8 @@
+require_relative 'duck'
 require_relative 'mallard_duck'
-require_relative 'redhead_duck'
-require_relative 'rubber_duck'
-require_relative 'decoy_duck'
+# require_relative 'redhead_duck'
+# require_relative 'rubber_duck'
+# require_relative 'decoy_duck'
 
 # p duck = Duck.new('quack')
 # duck.display
@@ -9,13 +10,13 @@ require_relative 'decoy_duck'
 # p duck.quack
 # p duck.fly
 
-p mallard = MallardDuck.new('mute')
+p mallard = MallardDuck.new('squeak')
 # red = RedheadDuck.new
 # rubert = RubberDuck.new
 # decoy = DecoyDuck.new
 
 # mallard.display
-# p mallard.fly
+p mallard.perform_fly
 p mallard.perform_quack
 # red.display
 # p red.fly

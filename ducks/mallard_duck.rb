@@ -1,12 +1,7 @@
 require_relative 'duck'
-# require_relative 'flyable'
-# require_relative 'quackable'
 
 class MallardDuck < Duck
-  # include Flyable
-  # include Quackable
-
-  def initialize(klass)
+  def initialize(sound)
     super
   end
 
@@ -16,5 +11,9 @@ class MallardDuck < Duck
 
   def perform_quack
     @quack_behaviour.sound.quack
+  end
+
+  def perform_fly
+    
   end
 end
