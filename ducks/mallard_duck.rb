@@ -1,19 +1,19 @@
 require_relative 'duck'
 
 class MallardDuck < Duck
-  def initialize(sound)
+  def initialize(quack, fly)
     super
   end
 
   def display
-    p "I'm am Mallard"
+    "I'm am Mallard"
   end
 
   def perform_quack
-    @quack_behaviour.sound.quack
+    @quack_behaviour.quack
   end
 
   def perform_fly
-    
+    @fly_behaviour.fly
   end
 end

@@ -3,15 +3,36 @@ require_relative 'quack'
 require_relative 'squeak'
 require_relative 'mute'
 require_relative 'fly_behaviour'
+require_relative 'fly_with_wings'
+require_relative 'fly_with_rocket'
+require_relative 'fly_not'
 
 class Duck
-  def initialize(klass)
-    klass_name = Object.const_get(klass.capitalize)
-    @quack_behaviour = QuackBehaviour.new(klass_name)
+  def initialize(quack, fly)
+    quack_name = format_string_to_const(quack)
+    @quack_behaviour = quack_name.new
+
+    fly_name = format_string_to_const(fly)
+    @fly_behaviour = fly_name.new
+  end
+
+  def format_string_to_const(behavior)
+    camelized = behavior.strip.split('_').map(&:capitalize).join
+    Object.const_get(camelized)
+  end
+
+  def fly_behaviour=(fly)
+    fly_name = format_string_to_const(fly)
+    @fly_behaviour = fly_name.new
+  end
+
+  def quack_behaviour=(quack)
+    quack_name = format_string_to_const(quack)
+    @quack_behaviour = quack_name.new
   end
 
   def display
-    p "I'm a duck!"
+    "I'm a duck!"
   end
 
   def swim

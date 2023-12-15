@@ -1,12 +1,15 @@
 require_relative 'duck'
-# require_relative 'flyable'
-# require_relative 'quackable'
 
 class RedheadDuck < Duck
-  # include Flyable
-  # include Quackable
-
   def display
-    p "I'm am Red Head"
+    "I'm am Red Head"
+  end
+
+  def perform_fly
+    @fly_behaviour.fly
+  end
+  
+  def perform_quack
+    @quack_behaviour.quack
   end
 end
