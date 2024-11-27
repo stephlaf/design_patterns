@@ -1,9 +1,6 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 class PizzaStore
-  def initialize()
-  end
-
   def order_pizza(type)
     pizza = create_pizza(type)
 

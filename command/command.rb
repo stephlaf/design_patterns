@@ -1,4 +1,4 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 module Command
   def execute

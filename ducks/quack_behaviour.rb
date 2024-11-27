@@ -1,6 +1,4 @@
-# require_relative 'quack'
-# require_relative 'squeak'
-# require_relative 'mute'
+# frozen_string_literal: true
 
 class QuackBehaviour
   attr_reader :sound

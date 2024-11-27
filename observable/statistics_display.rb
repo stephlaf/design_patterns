@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'display_interface'
 require_relative 'observer_interface'
 

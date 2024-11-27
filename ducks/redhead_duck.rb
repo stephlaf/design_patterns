@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'duck'
 
 class RedheadDuck < Duck
@@ -8,7 +10,7 @@ class RedheadDuck < Duck
   def perform_fly
     @fly_behaviour.fly
   end
-  
+
   def perform_quack
     @quack_behaviour.quack
   end

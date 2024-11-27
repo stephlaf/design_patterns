@@ -1,4 +1,5 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
+
 require 'debug'
 
 require_relative 'command'
@@ -18,10 +19,10 @@ class RemoteControlTest
     garage_door = GarageDoor.new
     garage_door_open_command = GarageDoorOpenCommand.new(garage_door)
 
-    remote.set_command(light_on_command)
+    remote.define_command(light_on_command)
     remote.button_was_pressed
 
-    remote.set_command(garage_door_open_command)
+    remote.define_command(garage_door_open_command)
     remote.button_was_pressed
   end
 end

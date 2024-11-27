@@ -1,5 +1,3 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
-class PlumTomatoSauce
-
-end
+class PlumTomatoSauce; end

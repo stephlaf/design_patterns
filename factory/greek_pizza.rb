@@ -1,13 +1,14 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 require_relative 'pizza'
 
 class GreekPizza < Pizza
-  def initialize
-    prepare
+  def initialize(ingredient_factory)
+    @ingredient_factory = ingredient_factory
+    super()
   end
 
   def prepare
-    p 'GREEK'
+    p "Preparing #{name}"
   end
 end

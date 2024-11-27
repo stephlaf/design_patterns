@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'display_interface'
 require_relative 'observer_interface'
 
@@ -23,10 +25,12 @@ class HeatIndexDisplay
     puts "Heat index is #{calculate_heat_index} degrees"
   end
 
+  # rubocop:disable Metrics/AbcSize, Lint/AmbiguousOperatorPrecedence, Layout/LineLength
   def calculate_heat_index
     hi = @c1 + @c2 * @temp + @c3 * @humidity + @c4 * @temp * @humidity + @c5 * @temp**2 + @c6 * @humidity**2 + @c7 * @temp**2 * @humidity + @c8 * @temp * @humidity**2 + @c9 * @temp**2 * @humidity**2
     hi.round(2)
   end
+  # rubocop:enable Metrics/AbcSize, Lint/AmbiguousOperatorPrecedence, Layout/LineLength
 
   def coefficient_values
     @c1 = -8.78469475556

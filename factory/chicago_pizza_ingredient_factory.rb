@@ -1,4 +1,4 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 require_relative 'pizza_ingredient_factory'
 require_relative 'thick_crust_dough'

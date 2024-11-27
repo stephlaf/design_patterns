@@ -1,9 +1,7 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 class SimpleRemoteControl
-  def initialize; end
-
-  def set_command(command)
+  def define_command(command)
     @slot = command
   end
 

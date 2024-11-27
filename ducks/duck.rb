@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'quack_behaviour'
 require_relative 'quack'
 require_relative 'squeak'
@@ -42,7 +44,7 @@ class Duck
   def perform_quack
     raise 'Not implemented'
   end
-  
+
   def perform_fly
     raise 'Not implemented'
   end

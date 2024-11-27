@@ -1,3 +1,5 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "debug", ">= 1.0.0"
+source 'https://rubygems.org'
+
+gem 'debug', '>= 1.0.0'

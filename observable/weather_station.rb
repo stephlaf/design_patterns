@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'weather_data'
 require_relative 'current_conditions_display'
 require_relative 'statistics_display'
@@ -27,9 +29,6 @@ class WeatherStation
 
     @wd_instance.set_measurements(30, 80, 30)
     puts ''
-
-
-
     # pp @wd_instance
   end
 end

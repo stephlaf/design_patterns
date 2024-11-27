@@ -1,10 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'duck'
 
 class MallardDuck < Duck
-  def initialize(quack, fly)
-    super
-  end
-
   def display
     "I'm am Mallard"
   end

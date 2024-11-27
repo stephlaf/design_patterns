@@ -1,24 +1,22 @@
-# frozen_string_litteral: true
+# frozen_string_literal: true
 
 class Singleton
+  attr_reader :unique_instance
+
   @unique_instance = new
 
-  def self.get_instance
-    @unique_instance
-  end
+  class << self
+    # rubocop:disable Naming/AccessorMethodName
+    def get_instance
+      @unique_instance
+    end
+    # rubocop:enable Naming/AccessorMethodName
 
-  def self.unique_instance
-    @unique_instance
-  end
+    private
 
-  private
-
-  def self.new
-    # p 'prout'
+    def new; end
   end
 end
 
-p instance1 = Singleton.get_instance
-p instance2 = Singleton.get_instance
-# p instance = Singleton.new
-# pp Singleton.unique_instance
+p Singleton.get_instance
+p Singleton.get_instance

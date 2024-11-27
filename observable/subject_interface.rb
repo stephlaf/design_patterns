@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SubjectInterface
   def register_observer(observer_object)
     raise NotImplementedError

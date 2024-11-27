@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # THIS GUY IS THE SUBJECT
 
 require_relative 'subject_interface'
@@ -21,7 +23,7 @@ class WeatherData
   end
 
   def notify_observers
-    @observers.each { |obs| obs.update }
+    @observers.each(&:update)
   end
 
   def measurements_changed
@@ -40,6 +42,7 @@ class WeatherData
     value.is_a?(Integer) ? value.to_f : value
   end
 
+  # rubocop:disable Naming/AccessorMethodName
   def get_temp
     @temp
   end
@@ -51,4 +54,5 @@ class WeatherData
   def get_pressure
     @pressure
   end
+  # rubocop:enable Naming/AccessorMethodName
 end
