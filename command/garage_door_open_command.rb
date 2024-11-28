@@ -11,5 +11,6 @@ class GarageDoorOpenCommand
 
   def execute
     @garage_door.up
+    @garage_door.light_on
   end
 end

@@ -3,15 +3,16 @@
 require 'debug'
 
 require_relative 'command'
-require_relative 'simple_remote_control'
+require_relative 'remote_control'
 require_relative 'light'
 require_relative 'light_on_command'
+require_relative 'light_off_command'
 require_relative 'garage_door'
 require_relative 'garage_door_open_command'
 
 class RemoteControlTest
   def main
-    remote = SimpleRemoteControl.new
+    remote = RemoteControl.new
 
     light = Light.new
     light_on_command = LightOnCommand.new(light)
