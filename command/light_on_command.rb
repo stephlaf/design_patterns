@@ -5,11 +5,13 @@ require_relative 'command'
 class LightOnCommand
   include Command
 
-  def initialize(light)
-    @light = light
+  attr_reader :receiver
+
+  def initialize(receiver)
+    @receiver = receiver
   end
 
   def execute
-    @light.on
+    @receiver.on
   end
 end

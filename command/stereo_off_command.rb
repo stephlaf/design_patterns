@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'command'
-
-class LightOffCommand
+class StereoOffCommand
   include Command
 
   attr_reader :receiver

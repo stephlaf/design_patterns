@@ -2,7 +2,7 @@
 
 require_relative 'command'
 
-class LightOffCommand
+class GarageDoorCloseCommand
   include Command
 
   attr_reader :receiver
@@ -12,6 +12,7 @@ class LightOffCommand
   end
 
   def execute
-    @receiver.off
+    @receiver.down
+    @receiver.light_off
   end
 end

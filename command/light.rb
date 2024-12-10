@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
 class Light
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+
   def on
-    p 'Light is on'
+    p "#{name} is on"
   end
 
   def off
-    p 'Light is off'
+    p "#{name} is off"
   end
 end

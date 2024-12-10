@@ -1,17 +1,29 @@
 # frozen_string_literal: true
 
 class GarageDoor
-  def up
-    p 'Garage is open'
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
   end
 
-  def down; end
+  def up
+    p "#{name} door is open"
+  end
 
-  def stop; end
+  def down
+    p "#{name} door is closed"
+  end
+
+  def stop
+    p "#{name} door is stopped"
+  end
 
   def light_on
-    p 'The garage light is on'
+    p "#{name} light is on"
   end
 
-  def light_off; end
+  def light_off
+    p "#{name} light is off"
+  end
 end

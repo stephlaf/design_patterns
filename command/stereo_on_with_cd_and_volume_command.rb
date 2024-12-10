@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'command'
-
-class LightOffCommand
+class StereoOnWithCdAndVolumeCommand
   include Command
 
   attr_reader :receiver
@@ -12,6 +10,8 @@ class LightOffCommand
   end
 
   def execute
-    @receiver.off
+    @receiver.on
+    @receiver.select_cd
+    @receiver.select_volume(11)
   end
 end

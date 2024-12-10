@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require_relative 'no_command'
+require_relative 'light'
+require_relative 'light_on_command'
+require_relative 'light_off_command'
 
 class RemoteControl
   attr_reader :on_commands, :off_commands
@@ -30,15 +33,18 @@ class RemoteControl
 
   def to_string
     result = []
-    (0..6).each do |n|
-      result << "Slot #{n + 1}: On: #{on_commands[n].class.name} Off: #{off_commands[n].class.name}"
+    (0..6).each do |slot|
+      names = command_names(slot)
+      result << "Slot #{slot + 1}: On: #{names[:on]} Off: #{names[:off]}"
     end
 
     result.join("\n")
   end
-end
 
-pp rc = RemoteControl.new
-rc.define_command(0, 'on prout', 'off prout')
-pp rc
-puts rc.to_string
+  def command_names(slot)
+    on_name = on_commands[slot].is_a?(NoCommand) ? 'No Command' : on_commands[slot].receiver.name
+    off_name = off_commands[slot].is_a?(NoCommand) ? 'No Command' : off_commands[slot].receiver.name
+
+    { on: on_name, off: off_name }
+  end
+end
